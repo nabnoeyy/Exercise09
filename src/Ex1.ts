@@ -66,11 +66,7 @@ public toString():string{
     
     return details;
 }
-public getmoney():number{
-    const money = (this.qty * this.price)
-    return money
 
-}
 public getAuthorsNames():string{
     let authorsNames = "";
     for(let i=0; i< this.authors.length;i++){

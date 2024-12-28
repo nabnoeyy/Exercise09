@@ -23,6 +23,7 @@ class Customer {
     }
     public toString():string{
         return `${this.name}(${this.id})(${this.discount}%)`;
+        
     }
 }
 
@@ -64,7 +65,7 @@ public getCustomerDiscount():number{
     return this.amount - discountAmount; // จำนวนเงินที่ลค.จ่าย คืนค่าเปอร์เซ็นต์ส่วนลด
 }
 public toString(): string {
-    return `Invoice[id=${this.id},customer=${this.customer.toString()},amount=${this.amount},getCustomerDiscount=${this.getCustomerDiscount()}]`;
+    return "Invoice[id:"+this.id+"custmer:"+this.customer.toString()+"amount:"+this.amount+"getCustomerDiscount"+this.getCustomerDiscount()+"]";
 }
 
 }

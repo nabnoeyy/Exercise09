@@ -59,10 +59,6 @@ class Book {
         details += `}, price: ${this.price}, qty: ${this.qty}, totalPrice: ${this.qty * this.price}]`; // คำนวณราคาทั้งหมดnn
         return details;
     }
-    getmoney() {
-        const money = (this.qty * this.price);
-        return money;
-    }
     getAuthorsNames() {
         let authorsNames = "";
         for (let i = 0; i < this.authors.length; i++) {

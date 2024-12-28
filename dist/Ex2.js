@@ -56,7 +56,7 @@ class Invoice {
         return this.amount - discountAmount; // จำนวนเงินที่ลค.จ่าย คืนค่าเปอร์เซ็นต์ส่วนลด
     }
     toString() {
-        return `Invoice[id=${this.id},customer=${this.customer.toString()},amount=${this.amount},getCustomerDiscount=${this.getCustomerDiscount()}]`;
+        return "Invoice[id:" + this.id + "custmer:" + this.customer.toString() + "amount:" + this.amount + "getCustomerDiscount" + this.getCustomerDiscount() + "]";
     }
 }
 exports.Invoice = Invoice;
