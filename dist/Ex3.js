@@ -69,7 +69,6 @@ class Staff extends Person {
         this.pay = pay;
     }
     toString() {
-        // return `Staff[${super.toString()} ,School: ${this.school}, Pay: ${this.pay}]`;
         return "[" + super.toString() + "School:" + this.school + "Pay" + this.pay + "]";
     }
 }

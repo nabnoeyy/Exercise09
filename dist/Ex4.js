@@ -2,7 +2,6 @@
 class Shape {
     constructor(color, filled) {
         this.color = "red";
-        this.filled = true;
         this.color = color;
         this.filled = filled;
     }
@@ -15,17 +14,16 @@ class Shape {
     isFilled() {
         return this.filled;
     }
-    setFilled(filled) {
-        this.filled = filled;
+    setFilled() {
+        return this.filled;
     }
     toString() {
-        return "Shape[color=" + this.color + ", filled=" + this.filled + "]";
+        return "Shape[" + "Color= " + this.color + "Filled= " + this.filled + "]";
     }
 }
 class Circle extends Shape {
-    constructor(color = "red", filled = true, radius = 1.0) {
+    constructor(color, filled, radius) {
         super(color, filled);
-        this.radius = 1.0;
         this.radius = radius;
     }
     getRadius() {
@@ -35,22 +33,20 @@ class Circle extends Shape {
         this.radius = radius;
     }
     getArea() {
-        return Math.PI * this.radius * this.radius;
+        return Math.PI * Math.pow(this.radius, 2);
     }
     getPerimeter() {
         return 2 * Math.PI * this.radius;
     }
     toString() {
-        return "Circle[" + super.toString() + ", radius:" + this.radius + "]";
+        return "Cicle[Shape[" + "Color= " + super.toString() + ",radius= " + this.radius + "]";
     }
 }
 class Rectangle extends Shape {
-    constructor(color = "red", filled = true, width = 1.0, length = 1.0) {
+    constructor(color, filled, width, lenght) {
         super(color, filled);
-        this.width = 1.0;
-        this.length = 1.0;
         this.width = width;
-        this.length = length;
+        this.lenght = lenght;
     }
     getWidth() {
         return this.width;
@@ -58,24 +54,24 @@ class Rectangle extends Shape {
     setWidth(width) {
         this.width = width;
     }
-    getLength() {
-        return this.length;
+    getLenght() {
+        return this.lenght;
     }
-    setLength(length) {
-        this.length = length;
+    setLenght(lenght) {
+        this.lenght = lenght;
     }
     getArea() {
-        return this.width * this.length;
+        return this.width * this.lenght;
     }
     getPerimeter() {
-        return 2 * this.width * this.length;
+        return (2 * this.width) + (this.lenght);
     }
     toString() {
-        return "Rectangle[" + super.toString() + ", width" + this.width + ", length:" + this.length + "]";
+        return "Rectangle[Shape[" + "Color= " + super.toString() + ",Width= " + this.width + ",Lenght= " + this.lenght + "]";
     }
 }
 class Square extends Rectangle {
-    constructor(side, color = "red", filled = true) {
+    constructor(side, color, filled) {
         super(color, filled, side, side);
         this.side = side;
     }
@@ -83,19 +79,17 @@ class Square extends Rectangle {
         return this.side;
     }
     setSide(side) {
-        this.side = side;
+        this.setLenght(side);
+        this.setWidth(side);
     }
     setWidth(side) {
-        this.side = side;
+        super.setWidth(side);
     }
-    setLength(side) {
-        this.side = side;
-    }
-    result() {
-        return this.side * this.side;
+    setLenght(side) {
+        super.setLenght(side);
     }
     toString() {
-        return "Square[" + super.toString() + "]"; //ห้ามลืมsuperนะ นอนอ
+        return "Square[Rectangle[Shape[Color= " + super.toString() + ",Width= " + this.setWidth + ",Lenght= " + this.setLenght + "]";
     }
 }
-module.exports = { Shape, Circle, Rectangle, Square };
+module.exports = { Shape, Square, Rectangle, Circle };

@@ -52,6 +52,7 @@ public getFee():number{
 public setFee(fee:number):void{
      this.fee = fee
 }
+
 public toString():string{
     return "Student["+super.toString()+"program:"+this.program+"year:"+this.year+"fee"+this.fee+"]";
 
@@ -80,7 +81,7 @@ class Staff extends Person{
         this.pay=pay
     }
     public toString(): string {
-        // return `Staff[${super.toString()} ,School: ${this.school}, Pay: ${this.pay}]`;
+        
         return "["+super.toString()+"School:"+this.school+"Pay"+this.pay+"]";
     }
 }
