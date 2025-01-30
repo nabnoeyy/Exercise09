@@ -38,7 +38,7 @@ public getRadius(): number {
 public setRadius(radius: number): void {
     this.radius = radius;
 }
- public getArea(): number {
+public getArea(): number {
     return Math.PI * Math.pow(this.radius, 2);
 }
 public getPerimeter(): number {
@@ -71,7 +71,7 @@ public getLenght(): number {
 public setLenght(lenght: number): void {
     this.lenght = lenght;
 }
- public getArea(): number {
+public getArea(): number {
     return this.width * this.lenght;
 }
 public getPerimeter(): number {
